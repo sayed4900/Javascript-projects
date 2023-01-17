@@ -72,10 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // make the tetromino move down every second
     timerId = setInterval(moveDown, 100);
+
     // move down function
     function moveDown() {
         undraw();
         currentPosition += width;
+
         draw();
         freeze();
     }
@@ -97,5 +99,40 @@ document.addEventListener("DOMContentLoaded", () => {
             currentPosition = 4;
             draw();
         }
+    }
+    // assign functions to keyCodes
+    function control(e) {
+        if (e.keyCode === 37) {
+            moveleft();
+        } else if (e.keyCode === 38) {
+            rotate();
+        } else if (e.keyCode === 39) {
+            moveRight();
+        } else if (e.keyCode === 40) {
+            moveDown();
+        }
+    }
+    document.addEventListener("keyup", control);
+    //move the tetromino left
+    function moveleft() {
+        undraw();
+        const isAtLeftEdge = current.some(
+            (index) => (currentPosition + index) % width === 0
+        );
+        if (!isAtLeftEdge) currentPosition -= 1;
+    }
+    function moveRight() {
+        undraw();
+        const isAtRightEdge = current.some(
+            (index) => (currentPosition + index) % width === width - 1
+        );
+        if (!isAtRightEdge) currentPosition += 1;
+    }
+    function rotate() {
+        undraw();
+        currentRotation++;
+        if (currentRotation === current.length) currentRotation = 0;
+
+        current = theTetrominoes[random][currentRotation];
     }
 });
