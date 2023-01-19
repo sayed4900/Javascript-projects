@@ -126,6 +126,7 @@ main {
     background-color: var(--primaryColor);
     height: 100vh;
     padding: 80px 30px;
+    overflow: auto;
 }
 
 .recipe-details i {
