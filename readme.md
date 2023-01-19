@@ -11,5 +11,5 @@
 
 ### Recipe APP
 
--   [Project-code](./tree/main/recipe%20app)
+-   [Project-code](./recipe%20app)
 -   [Live Demo](https://sayed-abdo490.netlify.app/)
