@@ -11,7 +11,8 @@
     <div class="container">
         <div class="img">
             <div class="img-box">
-                <img src="/image-editor/sayed.jpg" id="img" >
+                <img   id="img" >
+                <!-- src="/image-editor/sayed.jpg" -->
             </div>
             <div class="upload">
                 <label for="upload">Upload</label>
@@ -29,27 +30,32 @@
                     <input type="range" id="contrast" min="0" max="200" value="100">
                 </li>
                 <li>
-                    <label for="saturate">Brightness</label>
-                    <input type="range" id="saturate" min="0" max="200" value="100">
+                    <label for="brightness">Brightness</label>
+                    <input type="range" id="brightness" min="0" max="200" value="100">
                 </li>
                 <li>
-                    <label for="saturate">Saturate</label>
-                    <input type="range" id="saturate" min="0" max="200" value="100">
+                    <label for="sepia">Sepia</label>
+                    <input type="range" id="sepia" step=".1" min="0" max="1" value="0">
                 </li>
                 <li>
-                    <label for="saturate">Saturate</label>
-                    <input type="range" id="saturate" min="0" max="200" value="100">
+                    <label for="grayscale">Grayscale</label>
+                    <input type="range" id="grayscale" step=".1" min="0" max="1" value="0">
                 </li>
                 <li>
-                    <label for="saturate">Saturate</label>
-                    <input type="range" id="saturate" min="0" max="200" value="100">
+                    <label for="blur">Blur</label>
+                    <input type="range" id="blur" step=".1" min="0" max="10" value="0">
                 </li>
                 <li>
-                    <label for="saturate">Saturate</label>
-                    <input type="range" id="saturate" min="0" max="200" value="100">
+                    <label for="hue-rotate">Hue Rotate</label>
+                    <input type="range" id="hue-rotate"  min="0" max="350" value="0">
+                </li>
+                <li>
+                    <a download="true" id="download">Download</a>
+                    <span class="reset">Reset</span>
                 </li>
             </ul>
         </div>
     </div>
+    <script src="/image-editor/script.js"></script>
 </body>
 </html>
