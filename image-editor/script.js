@@ -15,6 +15,8 @@ const resest = document.querySelector('.reset')
 const download = document.getElementById('download')
 const upload = document.getElementById('upload');
 
+ 
+
 
 // hidden download and reset when page is open
 
@@ -72,3 +74,19 @@ resest.addEventListener("click", () => {
             hue-rotate(${hueRotate.value}deg)
         `;
 });
+
+
+download.addEventListener('click',e=>{
+    applyFilters();
+})
+function applyFilters() {
+    const canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    const context = canvas.getContext("2d");
+    context.filter = `saturate(${saturate.value}%) contrast(${contrast.value}%) brightness(${brightness.value}%) sepia(${sepia.value}) grayscale(${grayscale.value}) blur(${blur.value}px) hue-rotate(${hueRotate.value}deg)`;
+    context.drawImage(img,0,0,canvas.width,canvas.height);
+    const dataURL = canvas.toDataURL();
+    download.href = dataURL;
+}
+
